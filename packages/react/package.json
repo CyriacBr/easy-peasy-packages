@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyriacbr/easy-peasy.git"
+    "url": "https://github.com/cyriacbr/easy-peasy-packages.git"
   },
-  "homepage": "https://github.com/cyriacbr/easy-peasy#readme",
+  "homepage": "https://github.com/cyriacbr/easy-peasy-packages#readme",
   "author": "Cyriac Béré <cyriacbr@gmail.com>",
   "keywords": [
     "react",
@@ -66,7 +66,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.2.1",
-    "@types/jest": "^24.9.0",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.5",
