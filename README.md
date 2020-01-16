@@ -5,6 +5,8 @@
 <p align='center'>Vegetarian friendly state for React</p>
 <p>&nbsp;</p>
 
+[![Actions Status](https://github.com/CyriacBr/easy-peasy-packages/workflows/nodejs/badge.svg)](https://github.com/CyriacBr/easy-peasy-packages/actions)
+
 This repo contains some forks of the original [`easy-peasy`](https://github.com/ctrlplusb/easy-peasy) package to provide a standalone version as well as a connector for each major frontend framework.
 
 ## What's inside
