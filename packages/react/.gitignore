@@ -1,5 +1,31 @@
-*.log
+# System
 .DS_Store
+
+# Logs
+logs
+*.log
+
+# Dependencies
 node_modules
-.cache
+
+# Debug log from npm
+npm-debug.log
+
+# Jest
+coverage
+
+# Build output
 dist
+
+# Flow
+flow-coverage
+flow-typed
+
+# Yarn
+yarn-error.log
+
+# Temp directories
+temp
+
+# IDEs
+.vscode
