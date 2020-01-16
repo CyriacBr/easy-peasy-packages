@@ -1,5 +1,5 @@
 {
-  "name": "@easy-peasy/oldreact",
+  "name": "@easy-peasy/react",
   "version": "0.1.0",
   "description": "easy-peasy connector for React",
   "license": "MIT",
@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyriacbr/easy-peasy.git"
+    "url": "https://github.com/cyriacbr/easy-peasy-packages.git"
   },
-  "homepage": "https://github.com/cyriacbr/easy-peasy#readme",
+  "homepage": "https://github.com/cyriacbr/easy-peasy-packages#readme",
   "author": "Cyriac Béré <cyriacbr@gmail.com>",
   "keywords": [
     "react",
