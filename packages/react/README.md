@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/CyriacBr/easy-peasy-packages/workflows/build%20%26%20test/badge.svg)](https://github.com/CyriacBr/easy-peasy-packages/actions)
+
 # React Connector
 
 ```
@@ -30,6 +32,8 @@ function App() {
 **Step 3 - Use the store**
 
 ```js
+import { useStoreState, useStoreActions } from '@easy-peasy/react';
+
 function TodoList() {
   const todos = useStoreState(state => state.todos.items)
   const add = useStoreActions(actions => actions.todos.add)
