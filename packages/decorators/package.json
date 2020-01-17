@@ -11,7 +11,8 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "prepare": "tsdx build",
+    "publish:npm": "yarn publish --access=public"
   },
   "peerDependencies": {},
   "prettier": {
@@ -22,7 +23,7 @@
   },
   "name": "@easy-peasy/decorators",
   "author": "CyriacBr",
-  "module": "dist/easy-peasy-decorators.esm.js",
+  "module": "dist/decorators.esm.js",
   "devDependencies": {
     "@types/jest": "^24.9.0",
     "tsdx": "^0.12.3",
