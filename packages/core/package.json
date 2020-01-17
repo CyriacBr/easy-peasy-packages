@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/cyriacbr/easy-peasy-packages.git"
   },
-  "homepage": "https://github.com/cyriacbr/easy-peasy-packages#readme",
+  "homepage": "https://github.com/CyriacBr/easy-peasy-packages/tree/master/packages/core#readme",
   "author": "Cyriac Béré <cyriacbr@gmail.com>",
   "keywords": [
     "redux",

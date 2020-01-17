@@ -6,6 +6,11 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyriacbr/easy-peasy-packages.git"
+  },
+  "homepage": "https://github.com/CyriacBr/easy-peasy-packages/tree/master/packages/decorators#readme",
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",

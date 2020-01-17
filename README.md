@@ -11,6 +11,7 @@ This repo contains some forks of the original [`easy-peasy`](https://github.com/
 
 ## What's inside
 * [`@easy-peasy/core`](https://github.com/CyriacBr/easy-peasy-packages/tree/master/packages/core): a 100% vanilla JS easy-peasy version.
+* [`@easy-peasy/decorators`](https://github.com/CyriacBr/easy-peasy-packages/tree/master/packages/decorators): decorators wrapping the standalone API.
 * [`@easy-peasy/react`](https://github.com/CyriacBr/easy-peasy-packages/tree/master/packages/react): a connector for using a easy-peasy store with React.
 
 ## Documentation
