@@ -27,10 +27,11 @@
     "build": "rollup -c",
     "clean": "rimraf ./dist && rimraf ./coverage",
     "lint": "eslint src",
-    "prepublish": "npm run build",
+    "publish:npm": "yarn publish --access=public",
+    "prepublish": "yarn build",
     "test": "jest",
-    "test:coverage": "npm run test -- --coverage",
-    "test:coverage:deploy": "npm run test:coverage && codecov"
+    "test:coverage": "yarn test -- --coverage",
+    "test:coverage:deploy": "yarn test:coverage && codecov"
   },
   "resolutions": {
     "@types/react": "16.9.17"

@@ -30,6 +30,8 @@ function App() {
 **Step 3 - Use the store**
 
 ```js
+import { useStoreState, useStoreActions } from '@easy-peasy/react';
+
 function TodoList() {
   const todos = useStoreState(state => state.todos.items)
   const add = useStoreActions(actions => actions.todos.add)
