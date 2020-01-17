@@ -1,5 +1,12 @@
 export * from './Model';
-import { actionOn, thunk, action, computed, Action } from '@easy-peasy/core';
+import {
+  actionOn,
+  thunk,
+  action,
+  computed,
+  Action,
+  Thunk,
+} from '@easy-peasy/core';
 import { instances, model, listeners, thunks } from './metadata';
 
 export type Computed<T> = T & { computed?: undefined };
@@ -9,7 +16,9 @@ export type ToStoreType<T extends object> = {
       ? U
       : T[P]
     : T[P] extends (...args: any[]) => any
-    ? Action<T, Parameters<T[P]>[0]>
+    ? ReturnType<T[P]> extends void
+      ? Action<T, Parameters<T[P]>[0]>
+      : Thunk<T, Parameters<T[P]>[0], void, {}, ReturnType<T[P]>>
     : T[P] extends object
     ? ToStoreType<T[P]>
     : T[P];
@@ -63,7 +72,7 @@ function addActionsAndComputeds(ctorName: string, modelName: string) {
       } else if (thunks[ctorName] && thunks[ctorName].includes(methodName)) {
         model[modelName][methodName] = thunk(
           (actions, payload, { getState }) => {
-            value.call({ ...getState(), ...actions }, payload);
+            return value.call({ ...getState(), ...actions }, payload);
           }
         );
       } else if (value) {
