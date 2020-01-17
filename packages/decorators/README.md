@@ -1,27 +1,57 @@
-# TSDX Bootstrap
+[![Actions Status](https://github.com/CyriacBr/easy-peasy-packages/workflows/build%20%26%20test/badge.svg)](https://github.com/CyriacBr/easy-peasy-packages/actions)
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+# easy-peasy Decorators
 
-## Local Development
+This version wraps `@easy-peasy/core` to provide decorators for creating your store models. Inspired from [issue/359](https://github.com/ctrlplusb/easy-peasy/issues/359)
+```
+npm install @easy-peasy/decorators
+yarn add @easy-peasy/decorators
+```   
 
-Below is a list of commands you will probably find useful.
+## Basic Usage
 
-### `npm start` or `yarn start`
+**Step 1 - create your model**  
+*counter.model.ts*
+```ts
+import { Model, Thunk, Listener } from '@easy-peasy/decorators';
+import { TargetPayload } from '@easy-peasy/core';
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+@Model('counter')
+class CounterModel {
+  val = 0;
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+  // Computed
+  get nextCount() {
+    return this.val + 1;
+  }
 
-Your library will be rebuilt if you make edits.
+  // Action
+  setValue(newVal: number) {
+    this.val = newVal;
+  }
 
-### `npm run build` or `yarn build`
+  // Thunk
+  @Thunk
+  changeValue(newVal: number) {
+    this.setValue(newVal + 5);
+    return 'works!';
+  }
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+  // ActionOn
+  @Listener<CounterModel>(actions => actions.setValue)
+  onSetValue(target: TargetPayload<number>) {
+    console.log('val changed to: ', target.payload);
+  }
+}
+```
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
+**Step 2 - Create your store**  
+*index.ts*
+```ts
+import { CounterModel } from './counter.model.ts';
 
-### `npm test` or `yarn test`
-
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+interface StoreModel {
+  counter: CounterModel;
+}
+const store = createStore<StoreModel>();
+```

@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/CyriacBr/easy-peasy-packages/workflows/build%20%26%20test/badge.svg)](https://github.com/CyriacBr/easy-peasy-packages/actions)
+
 # Standalone version
 
 ```
